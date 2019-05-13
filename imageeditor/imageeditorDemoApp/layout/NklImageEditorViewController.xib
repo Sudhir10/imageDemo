@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="vBar" destination="RZj-Zp-lHT" id="aBc-nL-e3k"/>
                 <outlet property="vBarBg" destination="PEP-rc-mna" id="nty-Mm-N9H"/>
+                <outlet property="vBottomMenu" destination="Zur-4f-Jvf" id="DiP-05-F18"/>
                 <outlet property="vFooterBg" destination="XD9-Cq-x8P" id="9ME-DU-NHy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="qdC-H7-xid"/>
             </connections>
@@ -113,10 +114,38 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="bgColor" value="bg_bar"/>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zur-4f-Jvf">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWl-51-h9I">
+                            <rect key="frame" x="311" y="5" width="56" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <state key="normal" title="Save">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7w-e4-jsT">
+                            <rect key="frame" x="10" y="5" width="56" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <state key="normal" title="Cancel">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="vxl-yg-Sc1"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="PEP-rc-mna" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="1KS-yj-YeN"/>
+                <constraint firstItem="Zur-4f-Jvf" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="BKR-IK-GhD"/>
                 <constraint firstItem="XD9-Cq-x8P" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="GhJ-Ua-viP"/>
                 <constraint firstItem="RZj-Zp-lHT" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Glc-Rd-Rug"/>
                 <constraint firstItem="PEP-rc-mna" firstAttribute="bottom" secondItem="RZj-Zp-lHT" secondAttribute="bottom" id="Hhi-V3-ylp"/>
@@ -124,8 +153,10 @@
                 <constraint firstItem="XD9-Cq-x8P" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Nl1-vE-bmJ"/>
                 <constraint firstItem="XD9-Cq-x8P" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="O4m-4K-5hi"/>
                 <constraint firstItem="PEP-rc-mna" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ju5-XE-CZa"/>
+                <constraint firstItem="Zur-4f-Jvf" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="neX-28-Jl4"/>
                 <constraint firstItem="RZj-Zp-lHT" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="tfp-PB-UZ9"/>
                 <constraint firstItem="PEP-rc-mna" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="ulF-UO-bok"/>
+                <constraint firstItem="Zur-4f-Jvf" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="umq-1l-TL2"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="37.600000000000001" y="34.632683658170919"/>

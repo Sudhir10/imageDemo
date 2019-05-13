@@ -23,8 +23,9 @@
 		6D19310822883C7D004F78C0 /* NklCropToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D19310722883C7D004F78C0 /* NklCropToolView.xib */; };
 		6D19310A22883C98004F78C0 /* NklFilterToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D19310922883C98004F78C0 /* NklFilterToolView.xib */; };
 		6D19310C22883CAC004F78C0 /* NklInclineToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D19310B22883CAC004F78C0 /* NklInclineToolView.xib */; };
-		6D19310E22894753004F78C0 /* NklBottomMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D19310D22894752004F78C0 /* NklBottomMenuView.xib */; };
 		6D19311122894764004F78C0 /* NklBottomMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D19311022894764004F78C0 /* NklBottomMenuView.m */; };
+		6D19311622897DCC004F78C0 /* U.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D19311522897DCC004F78C0 /* U.m */; };
+		6D19311C22897E26004F78C0 /* NklView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D19311822897E26004F78C0 /* NklView.m */; };
 		6D67984622855DC700F269AF /* imageeditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D67984422855DC700F269AF /* imageeditor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D67985422855DF500F269AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D67985322855DF500F269AF /* AppDelegate.m */; };
 		6D67985722855DF500F269AF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D67985622855DF500F269AF /* ViewController.m */; };
@@ -60,9 +61,12 @@
 		6D19310722883C7D004F78C0 /* NklCropToolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NklCropToolView.xib; sourceTree = "<group>"; };
 		6D19310922883C98004F78C0 /* NklFilterToolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NklFilterToolView.xib; sourceTree = "<group>"; };
 		6D19310B22883CAC004F78C0 /* NklInclineToolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NklInclineToolView.xib; sourceTree = "<group>"; };
-		6D19310D22894752004F78C0 /* NklBottomMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NklBottomMenuView.xib; sourceTree = "<group>"; };
 		6D19310F22894764004F78C0 /* NklBottomMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NklBottomMenuView.h; sourceTree = "<group>"; };
 		6D19311022894764004F78C0 /* NklBottomMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NklBottomMenuView.m; sourceTree = "<group>"; };
+		6D19311422897DCC004F78C0 /* U.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = U.h; sourceTree = "<group>"; };
+		6D19311522897DCC004F78C0 /* U.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = U.m; sourceTree = "<group>"; };
+		6D19311722897E25004F78C0 /* NklView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NklView.h; sourceTree = "<group>"; };
+		6D19311822897E26004F78C0 /* NklView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NklView.m; sourceTree = "<group>"; };
 		6D67984122855DC700F269AF /* imageeditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = imageeditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D67984422855DC700F269AF /* imageeditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imageeditor.h; sourceTree = "<group>"; };
 		6D67984522855DC700F269AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 		6D1930E42285AD07004F78C0 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				6D19311722897E25004F78C0 /* NklView.h */,
+				6D19311822897E26004F78C0 /* NklView.m */,
 				6D1930EF22883B34004F78C0 /* NklScaleToolView.h */,
 				6D1930F022883B34004F78C0 /* NklScaleToolView.m */,
 				6D1930F222883B5E004F78C0 /* NklResizeToolView.h */,
@@ -182,6 +188,8 @@
 		6D67985122855DF500F269AF /* imageeditorDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				6D19311422897DCC004F78C0 /* U.h */,
+				6D19311522897DCC004F78C0 /* U.m */,
 				6D679874228563E600F269AF /* controllers */,
 				6D1930E42285AD07004F78C0 /* ui */,
 				6D1930E32285AC99004F78C0 /* res */,
@@ -270,7 +278,6 @@
 				6D19310722883C7D004F78C0 /* NklCropToolView.xib */,
 				6D19310922883C98004F78C0 /* NklFilterToolView.xib */,
 				6D19310B22883CAC004F78C0 /* NklInclineToolView.xib */,
-				6D19310D22894752004F78C0 /* NklBottomMenuView.xib */,
 			);
 			path = layout;
 			sourceTree = "<group>";
@@ -392,7 +399,6 @@
 				6D19310622883C63004F78C0 /* NklBrightnessToolView.xib in Resources */,
 				6D6798792285649C00F269AF /* NklImageEditorViewController.xib in Resources */,
 				6D19310822883C7D004F78C0 /* NklCropToolView.xib in Resources */,
-				6D19310E22894753004F78C0 /* NklBottomMenuView.xib in Resources */,
 				6D19310C22883CAC004F78C0 /* NklInclineToolView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,7 +423,9 @@
 				6D1930F422883B5E004F78C0 /* NklResizeToolView.m in Sources */,
 				6D19310022883BD2004F78C0 /* NklInclineToolView.m in Sources */,
 				6D67985722855DF500F269AF /* ViewController.m in Sources */,
+				6D19311622897DCC004F78C0 /* U.m in Sources */,
 				6D1930F722883B7F004F78C0 /* NklBrightnessToolView.m in Sources */,
+				6D19311C22897E26004F78C0 /* NklView.m in Sources */,
 				6D1930F122883B34004F78C0 /* NklScaleToolView.m in Sources */,
 				6D1930FD22883BB6004F78C0 /* NklFilterToolView.m in Sources */,
 				6D67986222855DF700F269AF /* main.m in Sources */,
