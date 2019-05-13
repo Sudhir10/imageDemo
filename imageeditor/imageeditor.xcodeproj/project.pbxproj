@@ -35,7 +35,42 @@
 		6D6798722285627000F269AF /* ImageEditorWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6798702285627000F269AF /* ImageEditorWrapper.m */; };
 		6D6798782285649C00F269AF /* NklImageEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6798762285649C00F269AF /* NklImageEditorViewController.m */; };
 		6D6798792285649C00F269AF /* NklImageEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D6798772285649C00F269AF /* NklImageEditorViewController.xib */; };
+		BD76379C2289863E00FF1052 /* NklBrightnessFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = BD76379A2289863E00FF1052 /* NklBrightnessFilter.h */; };
+		BD76379D2289863E00FF1052 /* NklBrightnessFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = BD76379B2289863E00FF1052 /* NklBrightnessFilter.m */; };
+		BD76379E2289863E00FF1052 /* NklBrightnessFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = BD76379B2289863E00FF1052 /* NklBrightnessFilter.m */; };
+		BD7637BD22899DAA00FF1052 /* GPUImageAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7637BC22899DAA00FF1052 /* GPUImageAdapter.swift */; };
+		BD7637BE22899DAA00FF1052 /* GPUImageAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7637BC22899DAA00FF1052 /* GPUImageAdapter.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BD7637B622899D7B00FF1052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD7637B122899D7B00FF1052 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCE0BE7C20D6DE610006E120;
+			remoteInfo = GPUImage_iOS;
+		};
+		BD7637B822899D7B00FF1052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD7637B122899D7B00FF1052 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCE0BE8C20D6E2B80006E120;
+			remoteInfo = GPUImage_macOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BD7637A722898A7E00FF1052 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6D1930E72285B40E004F78C0 /* NklCommonLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NklCommonLog.h; sourceTree = "<group>"; };
@@ -80,6 +115,12 @@
 		6D6798752285649C00F269AF /* NklImageEditorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NklImageEditorViewController.h; sourceTree = "<group>"; };
 		6D6798762285649C00F269AF /* NklImageEditorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NklImageEditorViewController.m; sourceTree = "<group>"; };
 		6D6798772285649C00F269AF /* NklImageEditorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NklImageEditorViewController.xib; sourceTree = "<group>"; };
+		BD76379A2289863E00FF1052 /* NklBrightnessFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NklBrightnessFilter.h; sourceTree = "<group>"; };
+		BD76379B2289863E00FF1052 /* NklBrightnessFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NklBrightnessFilter.m; sourceTree = "<group>"; };
+		BD7637A22289892B00FF1052 /* imageeditorDemoBridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "imageeditorDemoBridging-Header.h"; sourceTree = "<group>"; };
+		BD7637B122899D7B00FF1052 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = GPUImage.xcodeproj; sourceTree = "<group>"; };
+		BD7637BB22899DA900FF1052 /* imageeditorDemoApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "imageeditorDemoApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		BD7637BC22899DAA00FF1052 /* GPUImageAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUImageAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +194,7 @@
 				6D67984322855DC700F269AF /* imageeditor */,
 				6D67985122855DF500F269AF /* imageeditorDemoApp */,
 				6D67984222855DC700F269AF /* Products */,
+				BD7637A822898A8C00FF1052 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,12 +210,15 @@
 		6D67984322855DC700F269AF /* imageeditor */ = {
 			isa = PBXGroup;
 			children = (
+				BD7637BA22899D8800FF1052 /* bridgeclasses */,
+				BD7637982289860400FF1052 /* tools */,
 				6D1930E52285B3E3004F78C0 /* utilities */,
 				6D6798672285601800F269AF /* tools */,
 				6D67986622855E3000F269AF /* vendor */,
 				6D67984422855DC700F269AF /* imageeditor.h */,
 				6D67986F2285627000F269AF /* ImageEditorWrapper.h */,
 				6D6798702285627000F269AF /* ImageEditorWrapper.m */,
+				BD7637A22289892B00FF1052 /* imageeditorDemoBridging-Header.h */,
 				6D67984522855DC700F269AF /* Info.plist */,
 			);
 			path = imageeditor;
@@ -201,6 +246,7 @@
 		6D67986622855E3000F269AF /* vendor */ = {
 			isa = PBXGroup;
 			children = (
+				BD7637B122899D7B00FF1052 /* GPUImage.xcodeproj */,
 			);
 			path = vendor;
 			sourceTree = "<group>";
@@ -284,6 +330,48 @@
 			path = controllers;
 			sourceTree = "<group>";
 		};
+		BD7637982289860400FF1052 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				BD7637992289862D00FF1052 /* brightness */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+		BD7637992289862D00FF1052 /* brightness */ = {
+			isa = PBXGroup;
+			children = (
+				BD76379A2289863E00FF1052 /* NklBrightnessFilter.h */,
+				BD76379B2289863E00FF1052 /* NklBrightnessFilter.m */,
+			);
+			path = brightness;
+			sourceTree = "<group>";
+		};
+		BD7637A822898A8C00FF1052 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD7637B222899D7B00FF1052 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD7637B722899D7B00FF1052 /* GPUImage.framework */,
+				BD7637B922899D7B00FF1052 /* GPUImage.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BD7637BA22899D8800FF1052 /* bridgeclasses */ = {
+			isa = PBXGroup;
+			children = (
+				BD7637BC22899DAA00FF1052 /* GPUImageAdapter.swift */,
+				BD7637BB22899DA900FF1052 /* imageeditorDemoApp-Bridging-Header.h */,
+			);
+			path = bridgeclasses;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -292,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D67984622855DC700F269AF /* imageeditor.h in Headers */,
+				BD76379C2289863E00FF1052 /* NklBrightnessFilter.h in Headers */,
 				6D6798712285627000F269AF /* ImageEditorWrapper.h in Headers */,
 				6D1930ED2285B479004F78C0 /* NklImageEditorLog.h in Headers */,
 				6D1930E92285B40E004F78C0 /* NklCommonLog.h in Headers */,
@@ -326,6 +415,7 @@
 				6D67984C22855DF500F269AF /* Sources */,
 				6D67984D22855DF500F269AF /* Frameworks */,
 				6D67984E22855DF500F269AF /* Resources */,
+				BD7637A722898A7E00FF1052 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -347,9 +437,11 @@
 				TargetAttributes = {
 					6D67984022855DC700F269AF = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 					6D67984F22855DF500F269AF = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -364,6 +456,12 @@
 			mainGroup = 6D67983722855DC700F269AF;
 			productRefGroup = 6D67984222855DC700F269AF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BD7637B222899D7B00FF1052 /* Products */;
+					ProjectRef = BD7637B122899D7B00FF1052 /* GPUImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6D67984022855DC700F269AF /* imageeditor */,
@@ -371,6 +469,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BD7637B722899D7B00FF1052 /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = BD7637B622899D7B00FF1052 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BD7637B922899D7B00FF1052 /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = BD7637B822899D7B00FF1052 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6D67983F22855DC700F269AF /* Resources */ = {
@@ -404,8 +519,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD76379D2289863E00FF1052 /* NklBrightnessFilter.m in Sources */,
 				6D6798722285627000F269AF /* ImageEditorWrapper.m in Sources */,
 				6D1930EE2285B479004F78C0 /* NklImageEditorLog.m in Sources */,
+				BD7637BD22899DAA00FF1052 /* GPUImageAdapter.swift in Sources */,
 				6D1930EA2285B40E004F78C0 /* NklCommonLog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,8 +535,10 @@
 				6D19310022883BD2004F78C0 /* NklInclineToolView.m in Sources */,
 				6D67985722855DF500F269AF /* ViewController.m in Sources */,
 				6D1930F722883B7F004F78C0 /* NklBrightnessToolView.m in Sources */,
+				BD76379E2289863E00FF1052 /* NklBrightnessFilter.m in Sources */,
 				6D1930F122883B34004F78C0 /* NklScaleToolView.m in Sources */,
 				6D1930FD22883BB6004F78C0 /* NklFilterToolView.m in Sources */,
+				BD7637BE22899DAA00FF1052 /* GPUImageAdapter.swift in Sources */,
 				6D67986222855DF700F269AF /* main.m in Sources */,
 				6D67985422855DF500F269AF /* AppDelegate.m in Sources */,
 				6D19311122894764004F78C0 /* NklBottomMenuView.m in Sources */,
@@ -563,6 +682,7 @@
 		6D67984A22855DC700F269AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -581,6 +701,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "HCL-Technology-Pvt-Ltd.imageeditor";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -588,6 +710,7 @@
 		6D67984B22855DC700F269AF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -606,6 +729,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "HCL-Technology-Pvt-Ltd.imageeditor";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -613,7 +737,9 @@
 		6D67986422855DF700F269AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6964R4MSRJ;
@@ -626,6 +752,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hcl.nikon.testing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "imageeditor/bridgeclasses/imageeditorDemoApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -633,7 +762,9 @@
 		6D67986522855DF700F269AF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6964R4MSRJ;
@@ -646,6 +777,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hcl.nikon.testing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "imageeditor/bridgeclasses/imageeditorDemoApp-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
