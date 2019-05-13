@@ -23,6 +23,7 @@
 //背景
 @property (weak, nonatomic) IBOutlet UIView *vBarBg;
 @property (weak, nonatomic) IBOutlet UIView *vFooterBg;
+@property (weak, nonatomic) IBOutlet UIView *vBottomMenu;
 
 @end
 

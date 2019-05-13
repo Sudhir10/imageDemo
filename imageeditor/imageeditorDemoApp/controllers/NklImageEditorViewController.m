@@ -7,6 +7,7 @@
 //
 
 #import "NklImageEditorViewController.h"
+#import "U.h"
 
 @interface NklImageEditorViewController ()
 
@@ -16,7 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view from its nib.
+    [self.vBottomMenu setHidden:TRUE];
+}
+
+-(IBAction)scaleButtonClick:(UIButton*)sender {
+    UIView* v = [U loadView:@"NklBottomMenuView"];
+    v.frame = CGRectMake(0, SCREEN.height - 44, self.view.frame.size.width, 44);
+    [self.view addSubview:v];
 }
 
 /*
