@@ -24,8 +24,6 @@
 		6D19310A22883C98004F78C0 /* NklFilterToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D19310922883C98004F78C0 /* NklFilterToolView.xib */; };
 		6D19310C22883CAC004F78C0 /* NklInclineToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D19310B22883CAC004F78C0 /* NklInclineToolView.xib */; };
 		6D19311122894764004F78C0 /* NklBottomMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D19311022894764004F78C0 /* NklBottomMenuView.m */; };
-		6D19311622897DCC004F78C0 /* U.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D19311522897DCC004F78C0 /* U.m */; };
-		6D19311C22897E26004F78C0 /* NklView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D19311822897E26004F78C0 /* NklView.m */; };
 		6D67984622855DC700F269AF /* imageeditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D67984422855DC700F269AF /* imageeditor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D67985422855DF500F269AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D67985322855DF500F269AF /* AppDelegate.m */; };
 		6D67985722855DF500F269AF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D67985622855DF500F269AF /* ViewController.m */; };
@@ -41,6 +39,11 @@
 		BD76379E2289863E00FF1052 /* NklBrightnessFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = BD76379B2289863E00FF1052 /* NklBrightnessFilter.m */; };
 		BD7637BD22899DAA00FF1052 /* GPUImageAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7637BC22899DAA00FF1052 /* GPUImageAdapter.swift */; };
 		BD7637BE22899DAA00FF1052 /* GPUImageAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7637BC22899DAA00FF1052 /* GPUImageAdapter.swift */; };
+		BD7637C8228A954B00FF1052 /* U.m in Sources */ = {isa = PBXBuildFile; fileRef = BD7637C4228A954B00FF1052 /* U.m */; };
+		BD7637CB228A95A200FF1052 /* NklView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD7637CA228A95A200FF1052 /* NklView.m */; };
+		BD7637CE228AA4F200FF1052 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7637B722899D7B00FF1052 /* GPUImage.framework */; };
+		BD7637CF228AA4F200FF1052 /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BD7637B722899D7B00FF1052 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BD7637D2228AA4F700FF1052 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7637B722899D7B00FF1052 /* GPUImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,27 @@
 			remoteGlobalIDString = BCE0BE8C20D6E2B80006E120;
 			remoteInfo = GPUImage_macOS;
 		};
+		BD7637CC228AA4E900FF1052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD7637B122899D7B00FF1052 /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCE0BE7B20D6DE610006E120;
+			remoteInfo = GPUImage_iOS;
+		};
+		BD7637D0228AA4F200FF1052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD7637B122899D7B00FF1052 /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCE0BE7B20D6DE610006E120;
+			remoteInfo = GPUImage_iOS;
+		};
+		BD7637D3228AA4FC00FF1052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD7637B122899D7B00FF1052 /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCE0BE7B20D6DE610006E120;
+			remoteInfo = GPUImage_iOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +91,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BD7637CF228AA4F200FF1052 /* GPUImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,14 +123,10 @@
 		6D19310B22883CAC004F78C0 /* NklInclineToolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NklInclineToolView.xib; sourceTree = "<group>"; };
 		6D19310F22894764004F78C0 /* NklBottomMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NklBottomMenuView.h; sourceTree = "<group>"; };
 		6D19311022894764004F78C0 /* NklBottomMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NklBottomMenuView.m; sourceTree = "<group>"; };
-		6D19311422897DCC004F78C0 /* U.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = U.h; sourceTree = "<group>"; };
-		6D19311522897DCC004F78C0 /* U.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = U.m; sourceTree = "<group>"; };
-		6D19311722897E25004F78C0 /* NklView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NklView.h; sourceTree = "<group>"; };
-		6D19311822897E26004F78C0 /* NklView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NklView.m; sourceTree = "<group>"; };
-		6D67984122855DC700F269AF /* imageeditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = imageeditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D67984122855DC700F269AF /* imagetransformation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = imagetransformation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D67984422855DC700F269AF /* imageeditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imageeditor.h; sourceTree = "<group>"; };
 		6D67984522855DC700F269AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D67985022855DF500F269AF /* imageeditorDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imageeditorDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D67985022855DF500F269AF /* imagetransformationDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imagetransformationDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D67985222855DF500F269AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D67985322855DF500F269AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6D67985522855DF500F269AF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -123,8 +144,12 @@
 		BD76379B2289863E00FF1052 /* NklBrightnessFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NklBrightnessFilter.m; sourceTree = "<group>"; };
 		BD7637A22289892B00FF1052 /* imageeditorDemoBridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "imageeditorDemoBridging-Header.h"; sourceTree = "<group>"; };
 		BD7637B122899D7B00FF1052 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = GPUImage.xcodeproj; sourceTree = "<group>"; };
-		BD7637BB22899DA900FF1052 /* imageeditorDemoApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "imageeditorDemoApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		BD7637BB22899DA900FF1052 /* imagetransformationDemoApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "imagetransformationDemoApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		BD7637BC22899DAA00FF1052 /* GPUImageAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUImageAdapter.swift; sourceTree = "<group>"; };
+		BD7637C4228A954B00FF1052 /* U.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = U.m; sourceTree = "<group>"; };
+		BD7637C7228A954B00FF1052 /* U.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = U.h; sourceTree = "<group>"; };
+		BD7637C9228A95A200FF1052 /* NklView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NklView.h; sourceTree = "<group>"; };
+		BD7637CA228A95A200FF1052 /* NklView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NklView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD7637D2228AA4F700FF1052 /* GPUImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD7637CE228AA4F200FF1052 /* GPUImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,8 +182,8 @@
 		6D1930E42285AD07004F78C0 /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				6D19311722897E25004F78C0 /* NklView.h */,
-				6D19311822897E26004F78C0 /* NklView.m */,
+				BD7637C9228A95A200FF1052 /* NklView.h */,
+				BD7637CA228A95A200FF1052 /* NklView.m */,
 				6D1930EF22883B34004F78C0 /* NklScaleToolView.h */,
 				6D1930F022883B34004F78C0 /* NklScaleToolView.m */,
 				6D1930F222883B5E004F78C0 /* NklResizeToolView.h */,
@@ -197,8 +224,8 @@
 		6D67983722855DC700F269AF = {
 			isa = PBXGroup;
 			children = (
-				6D67984322855DC700F269AF /* imageeditor */,
-				6D67985122855DF500F269AF /* imageeditorDemoApp */,
+				6D67984322855DC700F269AF /* imagetransformation */,
+				6D67985122855DF500F269AF /* imagetransformationDemoApp */,
 				6D67984222855DC700F269AF /* Products */,
 				BD7637A822898A8C00FF1052 /* Frameworks */,
 			);
@@ -207,13 +234,13 @@
 		6D67984222855DC700F269AF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6D67984122855DC700F269AF /* imageeditor.framework */,
-				6D67985022855DF500F269AF /* imageeditorDemoApp.app */,
+				6D67984122855DC700F269AF /* imagetransformation.framework */,
+				6D67985022855DF500F269AF /* imagetransformationDemoApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6D67984322855DC700F269AF /* imageeditor */ = {
+		6D67984322855DC700F269AF /* imagetransformation */ = {
 			isa = PBXGroup;
 			children = (
 				BD7637BA22899D8800FF1052 /* bridgeclasses */,
@@ -227,14 +254,14 @@
 				BD7637A22289892B00FF1052 /* imageeditorDemoBridging-Header.h */,
 				6D67984522855DC700F269AF /* Info.plist */,
 			);
-			path = imageeditor;
+			path = imagetransformation;
 			sourceTree = "<group>";
 		};
-		6D67985122855DF500F269AF /* imageeditorDemoApp */ = {
+		6D67985122855DF500F269AF /* imagetransformationDemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				6D19311422897DCC004F78C0 /* U.h */,
-				6D19311522897DCC004F78C0 /* U.m */,
+				BD7637C7228A954B00FF1052 /* U.h */,
+				BD7637C4228A954B00FF1052 /* U.m */,
 				6D679874228563E600F269AF /* controllers */,
 				6D1930E42285AD07004F78C0 /* ui */,
 				6D1930E32285AC99004F78C0 /* res */,
@@ -248,7 +275,7 @@
 				6D67986022855DF700F269AF /* Info.plist */,
 				6D67986122855DF700F269AF /* main.m */,
 			);
-			path = imageeditorDemoApp;
+			path = imagetransformationDemoApp;
 			sourceTree = "<group>";
 		};
 		6D67986622855E3000F269AF /* vendor */ = {
@@ -374,7 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				BD7637BC22899DAA00FF1052 /* GPUImageAdapter.swift */,
-				BD7637BB22899DA900FF1052 /* imageeditorDemoApp-Bridging-Header.h */,
+				BD7637BB22899DA900FF1052 /* imagetransformationDemoApp-Bridging-Header.h */,
 			);
 			path = bridgeclasses;
 			sourceTree = "<group>";
@@ -397,9 +424,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6D67984022855DC700F269AF /* imageeditor */ = {
+		6D67984022855DC700F269AF /* imagetransformation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D67984922855DC700F269AF /* Build configuration list for PBXNativeTarget "imageeditor" */;
+			buildConfigurationList = 6D67984922855DC700F269AF /* Build configuration list for PBXNativeTarget "imagetransformation" */;
 			buildPhases = (
 				6D67983C22855DC700F269AF /* Headers */,
 				6D67983D22855DC700F269AF /* Sources */,
@@ -409,15 +436,16 @@
 			buildRules = (
 			);
 			dependencies = (
+				BD7637D4228AA4FC00FF1052 /* PBXTargetDependency */,
 			);
-			name = imageeditor;
+			name = imagetransformation;
 			productName = imageeditor;
-			productReference = 6D67984122855DC700F269AF /* imageeditor.framework */;
+			productReference = 6D67984122855DC700F269AF /* imagetransformation.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6D67984F22855DF500F269AF /* imageeditorDemoApp */ = {
+		6D67984F22855DF500F269AF /* imagetransformationDemoApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D67986322855DF700F269AF /* Build configuration list for PBXNativeTarget "imageeditorDemoApp" */;
+			buildConfigurationList = 6D67986322855DF700F269AF /* Build configuration list for PBXNativeTarget "imagetransformationDemoApp" */;
 			buildPhases = (
 				6D67984C22855DF500F269AF /* Sources */,
 				6D67984D22855DF500F269AF /* Frameworks */,
@@ -427,10 +455,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				BD7637CD228AA4E900FF1052 /* PBXTargetDependency */,
+				BD7637D1228AA4F200FF1052 /* PBXTargetDependency */,
 			);
-			name = imageeditorDemoApp;
+			name = imagetransformationDemoApp;
 			productName = imageeditorDemoApp;
-			productReference = 6D67985022855DF500F269AF /* imageeditorDemoApp.app */;
+			productReference = 6D67985022855DF500F269AF /* imagetransformationDemoApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -452,7 +482,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6D67983B22855DC700F269AF /* Build configuration list for PBXProject "imageeditor" */;
+			buildConfigurationList = 6D67983B22855DC700F269AF /* Build configuration list for PBXProject "imagetransformation" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -471,8 +501,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				6D67984022855DC700F269AF /* imageeditor */,
-				6D67984F22855DF500F269AF /* imageeditorDemoApp */,
+				6D67984022855DC700F269AF /* imagetransformation */,
+				6D67984F22855DF500F269AF /* imagetransformationDemoApp */,
 			);
 		};
 /* End PBXProject section */
@@ -538,16 +568,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D1930F422883B5E004F78C0 /* NklResizeToolView.m in Sources */,
+				BD7637C8228A954B00FF1052 /* U.m in Sources */,
 				6D19310022883BD2004F78C0 /* NklInclineToolView.m in Sources */,
 				6D67985722855DF500F269AF /* ViewController.m in Sources */,
-				6D19311622897DCC004F78C0 /* U.m in Sources */,
 				6D1930F722883B7F004F78C0 /* NklBrightnessToolView.m in Sources */,
-				6D19311C22897E26004F78C0 /* NklView.m in Sources */,
 				BD76379E2289863E00FF1052 /* NklBrightnessFilter.m in Sources */,
 				6D1930F122883B34004F78C0 /* NklScaleToolView.m in Sources */,
 				6D1930FD22883BB6004F78C0 /* NklFilterToolView.m in Sources */,
 				BD7637BE22899DAA00FF1052 /* GPUImageAdapter.swift in Sources */,
 				6D67986222855DF700F269AF /* main.m in Sources */,
+				BD7637CB228A95A200FF1052 /* NklView.m in Sources */,
 				6D67985422855DF500F269AF /* AppDelegate.m in Sources */,
 				6D19311122894764004F78C0 /* NklBottomMenuView.m in Sources */,
 				6D1930FA22883B9D004F78C0 /* NklCropToolView.m in Sources */,
@@ -556,6 +586,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BD7637CD228AA4E900FF1052 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImage_iOS;
+			targetProxy = BD7637CC228AA4E900FF1052 /* PBXContainerItemProxy */;
+		};
+		BD7637D1228AA4F200FF1052 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImage_iOS;
+			targetProxy = BD7637D0228AA4F200FF1052 /* PBXContainerItemProxy */;
+		};
+		BD7637D4228AA4FC00FF1052 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImage_iOS;
+			targetProxy = BD7637D3228AA4FC00FF1052 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6D67985D22855DF600F269AF /* LaunchScreen.storyboard */ = {
@@ -751,7 +799,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6964R4MSRJ;
-				INFOPLIST_FILE = imageeditorDemoApp/Info.plist;
+				INFOPLIST_FILE = imagetransformationDemoApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -760,7 +808,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hcl.nikon.testing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "imageeditor/bridgeclasses/imageeditorDemoApp-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "imagetransformation/bridgeclasses/imagetransformationDemoApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -776,7 +824,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6964R4MSRJ;
-				INFOPLIST_FILE = imageeditorDemoApp/Info.plist;
+				INFOPLIST_FILE = imagetransformationDemoApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -785,7 +833,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hcl.nikon.testing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "imageeditor/bridgeclasses/imageeditorDemoApp-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "imagetransformation/bridgeclasses/imagetransformationDemoApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -794,7 +842,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6D67983B22855DC700F269AF /* Build configuration list for PBXProject "imageeditor" */ = {
+		6D67983B22855DC700F269AF /* Build configuration list for PBXProject "imagetransformation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D67984722855DC700F269AF /* Debug */,
@@ -803,7 +851,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D67984922855DC700F269AF /* Build configuration list for PBXNativeTarget "imageeditor" */ = {
+		6D67984922855DC700F269AF /* Build configuration list for PBXNativeTarget "imagetransformation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D67984A22855DC700F269AF /* Debug */,
@@ -812,7 +860,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D67986322855DF700F269AF /* Build configuration list for PBXNativeTarget "imageeditorDemoApp" */ = {
+		6D67986322855DF700F269AF /* Build configuration list for PBXNativeTarget "imagetransformationDemoApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D67986422855DF700F269AF /* Debug */,
