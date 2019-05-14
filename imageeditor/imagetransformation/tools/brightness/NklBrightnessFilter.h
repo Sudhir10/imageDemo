@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <imagetransformationDemoApp-Swift.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NklBrightnessFilter : NSObject
-
++ (UIImage*)adjustBrightnessOfImage:(UIImage*)image withValue: (float) value;
 @end
 
 NS_ASSUME_NONNULL_END

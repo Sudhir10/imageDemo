@@ -10,8 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NklBrightnessToolView : UIView
+@class NklBrightnessToolView;
 
+@protocol NklBrightnessToolViewDelegate
+
+@required
+- (void) nklBrightnessToolView:(NklBrightnessToolView*) nklBrightnessToolView valueChange:(CGFloat)newValue;
+
+@end
+
+@interface NklBrightnessToolView : UIView
+@property (weak, nonatomic) id<NklBrightnessToolViewDelegate> delegate;
 @end
 
 NS_ASSUME_NONNULL_END

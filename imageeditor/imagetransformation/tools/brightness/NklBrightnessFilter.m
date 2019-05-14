@@ -7,13 +7,11 @@
 //
 
 #import "NklBrightnessFilter.h"
-//#import <GPUImage/GPUImage-Swift.h>
 
 
 @implementation NklBrightnessFilter
 
-- (void) test {
-//    RenderView *renderView;
-//    BrightnessAdjustment *r;
++ (UIImage*)adjustBrightnessOfImage:(UIImage*)image withValue: (float) value {
+    return [GPUImageAdapter adjustBrightnessOfImage:image withValue:value];
 }
 @end

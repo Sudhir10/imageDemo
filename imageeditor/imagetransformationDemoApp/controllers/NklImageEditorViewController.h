@@ -25,5 +25,6 @@
 @property (weak, nonatomic) IBOutlet UIView *vFooterBg;
 @property (weak, nonatomic) IBOutlet UIView *vBottomMenu;
 
+@property (strong, nonatomic) UIImage *originalImage;
 @end
 

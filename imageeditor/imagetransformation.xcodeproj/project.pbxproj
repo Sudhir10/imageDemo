@@ -150,6 +150,7 @@
 		BD7637C7228A954B00FF1052 /* U.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = U.h; sourceTree = "<group>"; };
 		BD7637C9228A95A200FF1052 /* NklView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NklView.h; sourceTree = "<group>"; };
 		BD7637CA228A95A200FF1052 /* NklView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NklView.m; sourceTree = "<group>"; };
+		BD91D136228AC78B00045389 /* imagetransformationDemoApp-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "imagetransformationDemoApp-Swift.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -402,6 +403,7 @@
 			children = (
 				BD7637BC22899DAA00FF1052 /* GPUImageAdapter.swift */,
 				BD7637BB22899DA900FF1052 /* imagetransformationDemoApp-Bridging-Header.h */,
+				BD91D136228AC78B00045389 /* imagetransformationDemoApp-Swift.h */,
 			);
 			path = bridgeclasses;
 			sourceTree = "<group>";

@@ -8,8 +8,11 @@
 
 import UIKit
 import GPUImage
-class GPUImageAdapter: NSObject {
-    func doOpe() {
-//        let b = BrightnessAdjustment
+
+@objc class GPUImageAdapter : NSObject {
+    @objc class func adjustBrightness(ofImage : UIImage , withValue : Float) -> UIImage {
+        let brightnessfilter = BrightnessAdjustment()
+        brightnessfilter.brightness = withValue
+        return ofImage.filterWithOperation(brightnessfilter)
     }
 }

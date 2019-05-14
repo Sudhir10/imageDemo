@@ -8,6 +8,11 @@
 
 #import "NklBrightnessToolView.h"
 
+@interface NklBrightnessToolView()
+@property (weak, nonatomic) IBOutlet UISlider *brightnessSlider;
+
+@end
+
 @implementation NklBrightnessToolView
 
 /*
@@ -17,5 +22,8 @@
     // Drawing code
 }
 */
+- (IBAction)onSliderValueChange:(id)sender {
+    [self.delegate nklBrightnessToolView:self valueChange:self.brightnessSlider.value];
+}
 
 @end
