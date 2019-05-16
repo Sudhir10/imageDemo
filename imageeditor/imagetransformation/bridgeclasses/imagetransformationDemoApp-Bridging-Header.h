@@ -4,7 +4,6 @@
 
 #ifndef imagetransformationDemoApp_Bridging_Header_h
 #define imagetransformationDemoApp_Bridging_Header_h
-//#import "GPUImageAdapter.swift"
 
 #endif /* imageeditorDemoBridging_Header_h */
 

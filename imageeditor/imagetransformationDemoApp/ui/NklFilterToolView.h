@@ -8,9 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+#import "NklFilterToolViewListener.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NklFilterToolView : UIView
+@interface NklFilterToolView : UIView <
+    UICollectionViewDataSource,
+    UICollectionViewDelegate,
+    UICollectionViewDelegateFlowLayout> {
+        NSArray *_imageFilters;
+}
+
+
+//UI
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) id <NklFilterToolViewListener> listener;
+@property (strong, nonatomic) UIImage *originalImage;
 
 @end
 

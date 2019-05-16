@@ -11,5 +11,6 @@
 //#import "imagetransformationDemoApp-Bridging-Header.h"
 //#import "GPUImageAdapter.swift"
 #import "imagetransformationDemoApp-Swift.h"
+#import "NklFilter.swift"
 
 #endif /* imagetransformationDemoApp_Swift_h */

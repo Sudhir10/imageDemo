@@ -42,22 +42,37 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlg-ab-we7">
                                     <rect key="frame" x="62.5" y="0.0" width="57.5" height="44"/>
                                     <state key="normal" image="crop_white"/>
+                                    <connections>
+                                        <action selector="cropClick:" destination="-1" eventType="touchUpInside" id="5aj-ws-jrt"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOi-Y6-mb8">
                                     <rect key="frame" x="125" y="0.0" width="57.5" height="44"/>
                                     <state key="normal" image="filter_white"/>
+                                    <connections>
+                                        <action selector="filterClick:" destination="-1" eventType="touchUpInside" id="j2h-eL-1sb"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EY2-zR-ZxS">
                                     <rect key="frame" x="187.5" y="0.0" width="57.5" height="44"/>
                                     <state key="normal" image="incline_white"/>
+                                    <connections>
+                                        <action selector="inclineClick:" destination="-1" eventType="touchUpInside" id="O1y-Z3-Hpy"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQp-HY-dkb">
                                     <rect key="frame" x="250" y="0.0" width="57.5" height="44"/>
                                     <state key="normal" image="rotate_white"/>
+                                    <connections>
+                                        <action selector="rotateClick:" destination="-1" eventType="touchUpInside" id="3ad-cr-g7u"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RuQ-aG-3aX">
                                     <rect key="frame" x="312.5" y="0.0" width="57.5" height="44"/>
                                     <state key="normal" image="resize_white"/>
+                                    <connections>
+                                        <action selector="resizeClick:" destination="-1" eventType="touchUpInside" id="iP0-r3-HiL"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>

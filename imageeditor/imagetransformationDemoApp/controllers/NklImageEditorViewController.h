@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+#import "NklBrightnessToolViewListener.h"
+#import "NklFilterToolViewListener.h"
 
-@interface NklImageEditorViewController : UIViewController {
-    
-   
+@interface NklImageEditorViewController : UIViewController <
+    NklBrightnessToolViewListener,
+    NklFilterToolViewListener> {
+    CGFloat preferedBottomViewOffset;
+    CGFloat preferedBottomViewHeight;
 }
 
 // UI
@@ -19,6 +23,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnBack;
 @property (weak, nonatomic) IBOutlet UIButton *btnInfo;
 @property (weak, nonatomic) IBOutlet UIView *vBar;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageViewBottomConstraint;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) UIView *attachedView;
 
 //背景
 @property (weak, nonatomic) IBOutlet UIView *vBarBg;

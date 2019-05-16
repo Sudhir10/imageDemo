@@ -23,7 +23,7 @@
 }
 */
 - (IBAction)onSliderValueChange:(id)sender {
-    [self.delegate nklBrightnessToolView:self valueChange:self.brightnessSlider.value];
+    [self.listener nklBrightnessToolView:self valueChange:self.brightnessSlider.value];
 }
 
 @end
