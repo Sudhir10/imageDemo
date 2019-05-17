@@ -51,6 +51,11 @@
 		BDD6C5EB228EB4E3004A244F /* NklResize.h in Headers */ = {isa = PBXBuildFile; fileRef = BDD6C5E9228EB4E3004A244F /* NklResize.h */; };
 		BDD6C5EC228EB4E3004A244F /* NklResize.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD6C5EA228EB4E3004A244F /* NklResize.m */; };
 		BDD6C5ED228EB4E3004A244F /* NklResize.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD6C5EA228EB4E3004A244F /* NklResize.m */; };
+		BDD6C5F5228EBFBC004A244F /* PhotoTweakView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD6C5F4228EBFBC004A244F /* PhotoTweakView.m */; };
+		BDD6C5F8228EBFDB004A244F /* UIColor+Tweak.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD6C5F6228EBFDB004A244F /* UIColor+Tweak.m */; };
+		BDD6C5FB228EE800004A244F /* NklCrop.h in Headers */ = {isa = PBXBuildFile; fileRef = BDD6C5F9228EE800004A244F /* NklCrop.h */; };
+		BDD6C5FC228EE800004A244F /* NklCrop.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD6C5FA228EE800004A244F /* NklCrop.m */; };
+		BDD6C5FD228EE800004A244F /* NklCrop.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD6C5FA228EE800004A244F /* NklCrop.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +182,12 @@
 		BDD6C5E6228EA384004A244F /* NklResizeToolViewListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NklResizeToolViewListener.h; sourceTree = "<group>"; };
 		BDD6C5E9228EB4E3004A244F /* NklResize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NklResize.h; sourceTree = "<group>"; };
 		BDD6C5EA228EB4E3004A244F /* NklResize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NklResize.m; sourceTree = "<group>"; };
+		BDD6C5F3228EBFBC004A244F /* PhotoTweakView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoTweakView.h; sourceTree = "<group>"; };
+		BDD6C5F4228EBFBC004A244F /* PhotoTweakView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoTweakView.m; sourceTree = "<group>"; };
+		BDD6C5F6228EBFDB004A244F /* UIColor+Tweak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Tweak.m"; sourceTree = "<group>"; };
+		BDD6C5F7228EBFDB004A244F /* UIColor+Tweak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Tweak.h"; sourceTree = "<group>"; };
+		BDD6C5F9228EE800004A244F /* NklCrop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NklCrop.h; sourceTree = "<group>"; };
+		BDD6C5FA228EE800004A244F /* NklCrop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NklCrop.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +221,8 @@
 		6D1930E42285AD07004F78C0 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				BDD6C5F3228EBFBC004A244F /* PhotoTweakView.h */,
+				BDD6C5F4228EBFBC004A244F /* PhotoTweakView.m */,
 				BD7637C9228A95A200FF1052 /* NklView.h */,
 				BD7637CA228A95A200FF1052 /* NklView.m */,
 				6D1930EF22883B34004F78C0 /* NklScaleToolView.h */,
@@ -289,6 +302,8 @@
 		6D67985122855DF500F269AF /* imagetransformationDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				BDD6C5F7228EBFDB004A244F /* UIColor+Tweak.h */,
+				BDD6C5F6228EBFDB004A244F /* UIColor+Tweak.m */,
 				BDD6C5E4228D915A004A244F /* dialog.xib */,
 				BDD6C5DE228D8E5E004A244F /* NklDialog.h */,
 				BDD6C5DF228D8E5E004A244F /* NklDialog.m */,
@@ -405,6 +420,7 @@
 		BD7637982289860400FF1052 /* tools */ = {
 			isa = PBXGroup;
 			children = (
+				BDD6C5F1228EBF7B004A244F /* crop */,
 				BDD6C5E8228EB4CF004A244F /* filters */,
 				BDD6C5E7228EB4BB004A244F /* resize */,
 				BD7637992289862D00FF1052 /* brightness */,
@@ -470,6 +486,15 @@
 			path = filters;
 			sourceTree = "<group>";
 		};
+		BDD6C5F1228EBF7B004A244F /* crop */ = {
+			isa = PBXGroup;
+			children = (
+				BDD6C5F9228EE800004A244F /* NklCrop.h */,
+				BDD6C5FA228EE800004A244F /* NklCrop.m */,
+			);
+			path = crop;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -481,6 +506,7 @@
 				BDD6C5EB228EB4E3004A244F /* NklResize.h in Headers */,
 				BD4195CA228C179A00231DF1 /* imagetransformationDemoApp-Swift.h in Headers */,
 				6D1930ED2285B479004F78C0 /* NklImageEditorLog.h in Headers */,
+				BDD6C5FB228EE800004A244F /* NklCrop.h in Headers */,
 				6D1930E92285B40E004F78C0 /* NklCommonLog.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,6 +651,7 @@
 				6D1930EE2285B479004F78C0 /* NklImageEditorLog.m in Sources */,
 				BDD6C5EC228EB4E3004A244F /* NklResize.m in Sources */,
 				BD7637BD22899DAA00FF1052 /* NklFilter.swift in Sources */,
+				BDD6C5FC228EE800004A244F /* NklCrop.m in Sources */,
 				6D1930EA2285B40E004F78C0 /* NklCommonLog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,15 +662,18 @@
 			files = (
 				6D1930F422883B5E004F78C0 /* NklResizeToolView.m in Sources */,
 				BD7637C8228A954B00FF1052 /* U.m in Sources */,
+				BDD6C5F8228EBFDB004A244F /* UIColor+Tweak.m in Sources */,
 				BDD6C5D5228D2A38004A244F /* NklFilterCell.m in Sources */,
 				6D19310022883BD2004F78C0 /* NklInclineToolView.m in Sources */,
 				6D67985722855DF500F269AF /* ViewController.m in Sources */,
 				BD4195DE228C415D00231DF1 /* NlkUtility.m in Sources */,
 				6D1930F722883B7F004F78C0 /* NklBrightnessToolView.m in Sources */,
 				6D1930F122883B34004F78C0 /* NklScaleToolView.m in Sources */,
+				BDD6C5F5228EBFBC004A244F /* PhotoTweakView.m in Sources */,
 				6D1930FD22883BB6004F78C0 /* NklFilterToolView.m in Sources */,
 				BDD6C5ED228EB4E3004A244F /* NklResize.m in Sources */,
 				BD7637BE22899DAA00FF1052 /* NklFilter.swift in Sources */,
+				BDD6C5FD228EE800004A244F /* NklCrop.m in Sources */,
 				6D67986222855DF700F269AF /* main.m in Sources */,
 				BD7637CB228A95A200FF1052 /* NklView.m in Sources */,
 				BDD6C5E0228D8E5E004A244F /* NklDialog.m in Sources */,

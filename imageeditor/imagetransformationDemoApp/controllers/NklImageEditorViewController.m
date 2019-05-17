@@ -13,8 +13,10 @@
 #import "NklBrightnessToolView.h"
 #import "NklFilterToolView.h"
 #import "NklResizeToolView.h"
+#import "PhotoTweakView.h"
 
 #import "NklResize.h"
+#import "NklCrop.h"
 
 #import <imagetransformation/imagetransformation-Swift.h>
 
@@ -57,6 +59,16 @@
     [self.view addSubview:self.attachedView];
 }
 - (IBAction)cropClick:(id)sender {
+    self.vBottomMenu.hidden = FALSE;
+    self.attachedView = [[PhotoTweakView alloc] initWithFrame:self.view.bounds image:self.originalImage maxRotationAngle:0.5];
+    preferedBottomViewSize.height = SCREEN.height - 88;
+    preferedBottomViewSize.width = 0;
+    preferedBottomViewOffset = SCREEN.height - 44;
+    self.attachedView.frame = CGRectMake(0, SCREEN.height - preferedBottomViewOffset, self.view.frame.size.width, preferedBottomViewSize.height);
+    self.attachedView.backgroundColor = UIColor.whiteColor;
+    self.attachedView.clipsToBounds = YES;
+    [self.view addSubview:self.attachedView];
+    
 }
 
 - (IBAction)filterClick:(id)sender {
@@ -118,6 +130,17 @@
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Save: Do you want to save the changes you made. Photo will appear in phone gallery?" preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if ([self.attachedView isKindOfClass:[PhotoTweakView class]]) {
+            PhotoTweakView *cropView = (PhotoTweakView*)self.attachedView;
+            UIImage *cropedImage = [NklCrop cropImage:self.originalImage
+                   translation:[cropView photoTranslation]
+                     transform:cropView.photoContentView.transform
+                         angle:cropView.angle
+                      cropSize:cropView.cropView.frame.size
+                 imageViewSize:cropView.photoContentView.bounds.size];
+            self.imageView.image = cropedImage;            
+        }
+
         [self removeAttachedView];
         self.vBottomMenu.hidden = TRUE;
         //save image

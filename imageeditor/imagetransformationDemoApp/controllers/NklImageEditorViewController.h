@@ -12,6 +12,7 @@
 #import "NklFilterToolViewListener.h"
 #import "NklResizeToolViewListener.h"
 
+
 @interface NklImageEditorViewController : UIViewController <
     NklBrightnessToolViewListener,
     NklFilterToolViewListener,
