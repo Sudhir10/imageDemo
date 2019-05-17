@@ -12,13 +12,135 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="137"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <view contentMode="scaleToFill" id="6iT-Qu-wBL" customClass="NklResizeToolView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="560"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VEf-C1-V7R">
+                    <rect key="frame" x="88" y="124.5" width="238" height="311"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7B-Db-sdh">
+                            <rect key="frame" x="139" y="268" width="84" height="33"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="33" id="Hvr-Hn-iGr"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <state key="normal" title="Done">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="doneClick:" destination="6iT-Qu-wBL" eventType="touchUpInside" id="uXY-Bk-Fe3"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFE-zg-YGv">
+                            <rect key="frame" x="14" y="268" width="84" height="33"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="33" id="MrG-az-ccN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <state key="normal" title="Cancel">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="cancelClick:" destination="6iT-Qu-wBL" eventType="touchUpInside" id="jH9-mX-8fL"/>
+                            </connections>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="rX3-Ei-p6e">
+                            <rect key="frame" x="41.5" y="27" width="155" height="210"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7B-A9-9fE">
+                                    <rect key="frame" x="0.0" y="0.0" width="155" height="30"/>
+                                    <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="Original (100%)" image="radio-unselected">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="originalClick:" destination="6iT-Qu-wBL" eventType="touchUpInside" id="cTn-KZ-aEh"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAr-5a-1Nw">
+                                    <rect key="frame" x="0.0" y="45" width="155" height="30"/>
+                                    <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="75%" image="radio-unselected">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="seventyfiveClick:" destination="6iT-Qu-wBL" eventType="touchUpInside" id="z5l-z1-TIz"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeB-cH-cKm">
+                                    <rect key="frame" x="0.0" y="90" width="155" height="30"/>
+                                    <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="50%" image="radio-unselected">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="fiftyClick:" destination="6iT-Qu-wBL" eventType="touchUpInside" id="eqF-MR-bPk"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpd-us-WPS">
+                                    <rect key="frame" x="0.0" y="135" width="155" height="30"/>
+                                    <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="25%" image="radio-unselected">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="twentyFiveClick:" destination="6iT-Qu-wBL" eventType="touchUpInside" id="oKC-zr-4do"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssm-AV-LOR">
+                                    <rect key="frame" x="0.0" y="180" width="155" height="30"/>
+                                    <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="10%" image="radio-unselected">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="tenClick:" destination="6iT-Qu-wBL" eventType="touchUpInside" id="80N-xa-GSL"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="155" id="hU3-wb-Lzj"/>
+                                <constraint firstAttribute="height" constant="210" id="rr4-gi-YbP"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="AKt-e7-8Vl" firstAttribute="trailing" secondItem="J7B-Db-sdh" secondAttribute="trailing" constant="15" id="A3c-tQ-knb"/>
+                        <constraint firstItem="J7B-Db-sdh" firstAttribute="top" secondItem="rX3-Ei-p6e" secondAttribute="bottom" constant="31" id="JCZ-34-SYm"/>
+                        <constraint firstAttribute="bottom" secondItem="J7B-Db-sdh" secondAttribute="bottom" constant="10" id="RTx-o4-x42"/>
+                        <constraint firstItem="cFE-zg-YGv" firstAttribute="leading" secondItem="AKt-e7-8Vl" secondAttribute="leading" constant="14" id="SKx-VO-Baq"/>
+                        <constraint firstItem="J7B-Db-sdh" firstAttribute="leading" secondItem="cFE-zg-YGv" secondAttribute="trailing" constant="41" id="U2E-lb-mdD"/>
+                        <constraint firstAttribute="bottom" secondItem="cFE-zg-YGv" secondAttribute="bottom" constant="10" id="fBX-xq-cTE"/>
+                        <constraint firstAttribute="height" constant="311" id="h84-9E-qqk"/>
+                        <constraint firstItem="J7B-Db-sdh" firstAttribute="width" secondItem="cFE-zg-YGv" secondAttribute="width" id="hjv-gG-sYf"/>
+                        <constraint firstAttribute="width" constant="238" id="rMf-Js-WCZ"/>
+                        <constraint firstItem="rX3-Ei-p6e" firstAttribute="centerX" secondItem="VEf-C1-V7R" secondAttribute="centerX" id="z9O-OZ-GcI"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="AKt-e7-8Vl"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.019106217616580268" green="0.019106217616580268" blue="0.019106217616580268" alpha="0.34633582746478869" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="VEf-C1-V7R" firstAttribute="centerX" secondItem="6iT-Qu-wBL" secondAttribute="centerX" id="8Ug-HX-i3A"/>
+                <constraint firstItem="VEf-C1-V7R" firstAttribute="centerY" secondItem="6iT-Qu-wBL" secondAttribute="centerY" id="FIx-A3-9KN"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="137.68115942028987" y="-119.53125"/>
+            <viewLayoutGuide key="safeArea" id="qP0-P8-2mC"/>
+            <connections>
+                <outlet property="fiftyButton" destination="NeB-cH-cKm" id="SDY-OE-YgL"/>
+                <outlet property="originalButton" destination="J7B-A9-9fE" id="9Cm-LA-OIO"/>
+                <outlet property="seventyfiveButton" destination="yAr-5a-1Nw" id="aOW-Qi-2zX"/>
+                <outlet property="tenButton" destination="ssm-AV-LOR" id="X9T-uW-Ohl"/>
+                <outlet property="twentyFiveButton" destination="gpd-us-WPS" id="tcu-qV-Tq8"/>
+            </connections>
+            <point key="canvasLocation" x="595.6521739130435" y="16.071428571428569"/>
         </view>
     </objects>
+    <resources>
+        <image name="radio-unselected" width="20" height="20"/>
+    </resources>
 </document>

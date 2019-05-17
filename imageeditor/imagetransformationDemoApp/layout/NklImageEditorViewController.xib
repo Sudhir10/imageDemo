@@ -177,7 +177,7 @@
                         <constraint firstAttribute="height" constant="44" id="vTn-1C-14W"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IO4-WC-dyB">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IO4-WC-dyB">
                     <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                 </imageView>
             </subviews>

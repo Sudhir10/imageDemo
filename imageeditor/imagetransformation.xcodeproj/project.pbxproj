@@ -48,6 +48,9 @@
 		BDD6C5E0228D8E5E004A244F /* NklDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD6C5DF228D8E5E004A244F /* NklDialog.m */; };
 		BDD6C5E3228D8E92004A244F /* NklProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD6C5E2228D8E92004A244F /* NklProgressView.m */; };
 		BDD6C5E5228D915A004A244F /* dialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD6C5E4228D915A004A244F /* dialog.xib */; };
+		BDD6C5EB228EB4E3004A244F /* NklResize.h in Headers */ = {isa = PBXBuildFile; fileRef = BDD6C5E9228EB4E3004A244F /* NklResize.h */; };
+		BDD6C5EC228EB4E3004A244F /* NklResize.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD6C5EA228EB4E3004A244F /* NklResize.m */; };
+		BDD6C5ED228EB4E3004A244F /* NklResize.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD6C5EA228EB4E3004A244F /* NklResize.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +174,9 @@
 		BDD6C5E1228D8E92004A244F /* NklProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NklProgressView.h; sourceTree = "<group>"; };
 		BDD6C5E2228D8E92004A244F /* NklProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NklProgressView.m; sourceTree = "<group>"; };
 		BDD6C5E4228D915A004A244F /* dialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dialog.xib; sourceTree = "<group>"; };
+		BDD6C5E6228EA384004A244F /* NklResizeToolViewListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NklResizeToolViewListener.h; sourceTree = "<group>"; };
+		BDD6C5E9228EB4E3004A244F /* NklResize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NklResize.h; sourceTree = "<group>"; };
+		BDD6C5EA228EB4E3004A244F /* NklResize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NklResize.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +214,7 @@
 				BD7637CA228A95A200FF1052 /* NklView.m */,
 				6D1930EF22883B34004F78C0 /* NklScaleToolView.h */,
 				6D1930F022883B34004F78C0 /* NklScaleToolView.m */,
+				BDD6C5E6228EA384004A244F /* NklResizeToolViewListener.h */,
 				6D1930F222883B5E004F78C0 /* NklResizeToolView.h */,
 				6D1930F322883B5E004F78C0 /* NklResizeToolView.m */,
 				6D1930F522883B7F004F78C0 /* NklBrightnessToolView.h */,
@@ -398,6 +405,8 @@
 		BD7637982289860400FF1052 /* tools */ = {
 			isa = PBXGroup;
 			children = (
+				BDD6C5E8228EB4CF004A244F /* filters */,
+				BDD6C5E7228EB4BB004A244F /* resize */,
 				BD7637992289862D00FF1052 /* brightness */,
 			);
 			path = tools;
@@ -429,7 +438,6 @@
 		BD7637BA22899D8800FF1052 /* bridgeclasses */ = {
 			isa = PBXGroup;
 			children = (
-				BD7637BC22899DAA00FF1052 /* NklFilter.swift */,
 				BD7637BB22899DA900FF1052 /* imagetransformationDemoApp-Bridging-Header.h */,
 				BD91D136228AC78B00045389 /* imagetransformationDemoApp-Swift.h */,
 			);
@@ -445,6 +453,23 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		BDD6C5E7228EB4BB004A244F /* resize */ = {
+			isa = PBXGroup;
+			children = (
+				BDD6C5E9228EB4E3004A244F /* NklResize.h */,
+				BDD6C5EA228EB4E3004A244F /* NklResize.m */,
+			);
+			path = resize;
+			sourceTree = "<group>";
+		};
+		BDD6C5E8228EB4CF004A244F /* filters */ = {
+			isa = PBXGroup;
+			children = (
+				BD7637BC22899DAA00FF1052 /* NklFilter.swift */,
+			);
+			path = filters;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -453,6 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D67984622855DC700F269AF /* imageeditor.h in Headers */,
+				BDD6C5EB228EB4E3004A244F /* NklResize.h in Headers */,
 				BD4195CA228C179A00231DF1 /* imagetransformationDemoApp-Swift.h in Headers */,
 				6D1930ED2285B479004F78C0 /* NklImageEditorLog.h in Headers */,
 				6D1930E92285B40E004F78C0 /* NklCommonLog.h in Headers */,
@@ -597,6 +623,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D1930EE2285B479004F78C0 /* NklImageEditorLog.m in Sources */,
+				BDD6C5EC228EB4E3004A244F /* NklResize.m in Sources */,
 				BD7637BD22899DAA00FF1052 /* NklFilter.swift in Sources */,
 				6D1930EA2285B40E004F78C0 /* NklCommonLog.m in Sources */,
 			);
@@ -615,6 +642,7 @@
 				6D1930F722883B7F004F78C0 /* NklBrightnessToolView.m in Sources */,
 				6D1930F122883B34004F78C0 /* NklScaleToolView.m in Sources */,
 				6D1930FD22883BB6004F78C0 /* NklFilterToolView.m in Sources */,
+				BDD6C5ED228EB4E3004A244F /* NklResize.m in Sources */,
 				BD7637BE22899DAA00FF1052 /* NklFilter.swift in Sources */,
 				6D67986222855DF700F269AF /* main.m in Sources */,
 				BD7637CB228A95A200FF1052 /* NklView.m in Sources */,

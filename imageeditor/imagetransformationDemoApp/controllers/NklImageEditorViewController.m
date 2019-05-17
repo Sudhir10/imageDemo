@@ -12,6 +12,10 @@
 #import "NlkUtility.h"
 #import "NklBrightnessToolView.h"
 #import "NklFilterToolView.h"
+#import "NklResizeToolView.h"
+
+#import "NklResize.h"
+
 #import <imagetransformation/imagetransformation-Swift.h>
 
 @implementation NklImageEditorViewController
@@ -25,7 +29,10 @@
 
 - (void)viewDidLayoutSubviews {
     if (self.attachedView != nil) {
-        self.attachedView.frame = CGRectMake(0, SCREEN.height - (preferedBottomViewOffset + [NlkUtility bottomSafeInsetSize]), self.view.frame.size.width, preferedBottomViewHeight);
+        self.attachedView.frame = CGRectMake(0,
+                                             SCREEN.height - (preferedBottomViewOffset + [NlkUtility bottomSafeInsetSize]),
+                                             preferedBottomViewSize.width == 0 ? self.view.frame.size.width : preferedBottomViewSize.width,
+                                             preferedBottomViewSize.height);
 //        self.imageViewBottomConstraint.constant = 44 + ;
     } else {
 //        self.imageViewBottomConstraint.constant = 0;
@@ -44,8 +51,9 @@
     self.attachedView = (NklBrightnessToolView*)[U loadView:@"NklBrightnessToolView"];
     ((NklBrightnessToolView*)self.attachedView ).listener = self;
     preferedBottomViewOffset = 88;
-    preferedBottomViewHeight = 44;
-    self.attachedView.frame = CGRectMake(0, SCREEN.height - preferedBottomViewOffset, self.view.frame.size.width, preferedBottomViewHeight);
+    preferedBottomViewSize.height = 44;
+    preferedBottomViewSize.width = 0;
+    self.attachedView.frame = CGRectMake(0, SCREEN.height - preferedBottomViewOffset, self.view.frame.size.width, preferedBottomViewSize.height);
     [self.view addSubview:self.attachedView];
 }
 - (IBAction)cropClick:(id)sender {
@@ -57,8 +65,9 @@
     ((NklFilterToolView*)self.attachedView ).originalImage = self.originalImage;
     ((NklFilterToolView*)self.attachedView ).listener = self;
     preferedBottomViewOffset = 200;
-    preferedBottomViewHeight = preferedBottomViewOffset - 44;
-    self.attachedView.frame = CGRectMake(0, SCREEN.height - preferedBottomViewOffset, self.view.frame.size.width, preferedBottomViewHeight);
+    preferedBottomViewSize.height = preferedBottomViewOffset - 44;
+    preferedBottomViewSize.width = 0;
+    self.attachedView.frame = CGRectMake(0, SCREEN.height - preferedBottomViewOffset, self.view.frame.size.width, preferedBottomViewSize.height);
     [self.view addSubview:self.attachedView];
 }
 
@@ -69,6 +78,15 @@
 }
 
 - (IBAction)resizeClick:(id)sender {
+    self.attachedView = [U loadView:@"NklResizeToolView"];
+    ((NklResizeToolView*)self.attachedView ).listener = self;
+    preferedBottomViewSize.height = SCREEN.height;
+    preferedBottomViewSize.width = 0;
+    preferedBottomViewOffset = SCREEN.height;
+
+    self.attachedView.frame = CGRectMake(0, SCREEN.height - preferedBottomViewOffset, self.view.frame.size.width, preferedBottomViewSize.height);
+    [self.view addSubview:self.attachedView];
+
 }
 
 - (IBAction)onCancelClick:(id)sender {
@@ -122,11 +140,21 @@
     self.imageView.image = [NklFilter adjustBrightnessOfImage:self.originalImage withValue:newValue];
 //    [NklBrightnessFilter adjustBrightnessOfImage:self.originalImage withValue:newValue];
 }
+
 - (void)onFilterSelected:(NklFilterType)filterType {
     self.imageView.image = [NklFilter filterImageOnImage:self.originalImage byType:filterType];
-
 }
 
+- (void)nklResizeToolView:(NklResizeToolView *)nklresizeToolView valueChange:(CGFloat)newValue {
+    NSLog(@"change value == %f",newValue);
+    
+    [self removeAttachedView];
+    self.vBottomMenu.hidden = TRUE;
+    self.imageView.image = [NklResize resizeImage:self.imageView.image byPercentage:newValue];
+}
 
-
+- (void)nklResizeToolViewCancelClick:(NklResizeToolView *)nklresizeToolView {
+    [self removeAttachedView];
+    self.vBottomMenu.hidden = TRUE;
+}
 @end
