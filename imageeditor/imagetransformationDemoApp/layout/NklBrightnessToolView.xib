@@ -12,13 +12,25 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="117"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NklBrightnessToolView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="38"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GyY-7e-Jlx">
+                    <rect key="frame" x="4" y="4" width="406" height="30"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                    <connections>
+                        <action selector="onSliderValueChange:" destination="iN0-l3-epB" eventType="valueChanged" id="WcX-n2-gcS"/>
+                    </connections>
+                </slider>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="137.68115942028987" y="-126.22767857142857"/>
+            <connections>
+                <outlet property="brightnessSlider" destination="GyY-7e-Jlx" id="pWG-LL-Rfh"/>
+            </connections>
+            <point key="canvasLocation" x="-281.15942028985512" y="-140.625"/>
         </view>
     </objects>
 </document>

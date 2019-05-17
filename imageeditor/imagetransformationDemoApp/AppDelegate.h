@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "NklImageEditorViewController.h"
+#import "NklView.h"
 
+@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+    UIControl *_overlayControl;
+    BOOL _showLocationManager;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
-
+- (void)openOverlay:(NklView*)overlay;
+- (void)removeOverlay;
 @end
 
