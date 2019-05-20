@@ -8,20 +8,17 @@
 
 #import "NklBrightnessToolView.h"
 
+//brightness tool view
 @interface NklBrightnessToolView()
+
+//slider
 @property (weak, nonatomic) IBOutlet UISlider *brightnessSlider;
 
 @end
 
 @implementation NklBrightnessToolView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+//called when slider value change
 - (IBAction)onSliderValueChange:(id)sender {
     [self.listener nklBrightnessToolView:self valueChange:self.brightnessSlider.value];
 }

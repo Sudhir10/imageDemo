@@ -10,12 +10,12 @@
 
 #import "NklFilterToolViewListener.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
+// filter tool view
 @interface NklFilterToolView : UIView <
     UICollectionViewDataSource,
     UICollectionViewDelegate,
     UICollectionViewDelegateFlowLayout> {
+        
         NSArray *_imageFilters;
 }
 
@@ -26,5 +26,3 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIImage *originalImage;
 
 @end
-
-NS_ASSUME_NONNULL_END

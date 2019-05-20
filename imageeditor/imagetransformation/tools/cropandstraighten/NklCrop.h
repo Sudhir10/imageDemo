@@ -8,15 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
+//Crop tool
 @interface NklCrop : NSObject
+
+//cropimage with given parameters
 + (UIImage*)cropImage:(UIImage*)image
           translation:(CGPoint)translation
             transform:(CGAffineTransform)t
                 angle:(CGFloat)angle
              cropSize:(CGSize)cropSize
         imageViewSize:(CGSize)imageViewSize;
+
 @end
 
-NS_ASSUME_NONNULL_END

@@ -8,8 +8,10 @@
 #import <UIKit/UIKit.h>
 #import "NklCrop.h"
 
+//Crop tool
 @implementation NklCrop
 
+// crop image with parameters
 + (UIImage*)cropImage:(UIImage*)image
           translation:(CGPoint)translation
             transform:(CGAffineTransform)t
@@ -34,13 +36,14 @@
                                         outputWidth:image.size.width
                                            cropSize:cropSize
                                       imageViewSize:imageViewSize];
-    
+    //convert imageref to uiimage
     UIImage *outputImage = [UIImage imageWithCGImage:imageRef];
     CGImageRelease(imageRef);
     
     return outputImage;
 }
 
+//return a new image after transforming with orientation,width crop size and  image view size
 + (CGImageRef)newTransformedImage:(CGAffineTransform)transform
                       sourceImage:(CGImageRef)sourceImage
                        sourceSize:(CGSize)sourceSize
@@ -49,6 +52,7 @@
                          cropSize:(CGSize)cropSize
                     imageViewSize:(CGSize)imageViewSize
 {
+    // scale image
     CGImageRef source = [NklCrop newScaledImage:sourceImage
                              withOrientation:sourceOrientation
                                       toSize:sourceSize
@@ -57,6 +61,7 @@
     CGFloat aspect = cropSize.height/cropSize.width;
     CGSize outputSize = CGSizeMake(outputWidth, outputWidth*aspect);
     
+    //create bitmap
     CGContextRef context = CGBitmapContextCreate(NULL,
                                                  outputSize.width,
                                                  outputSize.height,
@@ -64,30 +69,36 @@
                                                  0,
                                                  CGImageGetColorSpace(source),
                                                  CGImageGetBitmapInfo(source));
+    
     CGContextSetFillColorWithColor(context, [[UIColor clearColor] CGColor]);
     CGContextFillRect(context, CGRectMake(0, 0, outputSize.width, outputSize.height));
     
+    // transform
     CGAffineTransform uiCoords = CGAffineTransformMakeScale(outputSize.width / cropSize.width,
                                                             outputSize.height / cropSize.height);
     uiCoords = CGAffineTransformTranslate(uiCoords, cropSize.width/2.0, cropSize.height / 2.0);
+    // scale
     uiCoords = CGAffineTransformScale(uiCoords, 1.0, -1.0);
     CGContextConcatCTM(context, uiCoords);
     
     CGContextConcatCTM(context, transform);
     CGContextScaleCTM(context, 1.0, -1.0);
     
+    // draw image
     CGContextDrawImage(context, CGRectMake(-imageViewSize.width/2.0,
                                            -imageViewSize.height/2.0,
                                            imageViewSize.width,
                                            imageViewSize.height)
                        , source);
     
+    // convert bitmap context to imageref
     CGImageRef resultRef = CGBitmapContextCreateImage(context);
     CGContextRelease(context);
     CGImageRelease(source);
     return resultRef;
 }
 
+//Return new scaled image for given orientation , size and quality
 + (CGImageRef)newScaledImage:(CGImageRef)source
              withOrientation:(UIImageOrientation)orientation
                       toSize:(CGSize)size
@@ -117,6 +128,7 @@
     
     CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
     
+    // create bitmap
     CGContextRef context = CGBitmapContextCreate(NULL,
                                                  size.width,
                                                  size.height,
@@ -127,16 +139,21 @@
                                                  );
     CGColorSpaceRelease(rgbColorSpace);
     
+    // set quality
     CGContextSetInterpolationQuality(context, quality);
+    // translate
     CGContextTranslateCTM(context,  size.width/2,  size.height/2);
+    // rotate
     CGContextRotateCTM(context,rotation);
     
+    //draw image
     CGContextDrawImage(context, CGRectMake(-srcSize.width/2 ,
                                            -srcSize.height/2,
                                            srcSize.width,
                                            srcSize.height),
                        source);
     
+    // convert bitmap context to imageref
     CGImageRef resultRef = CGBitmapContextCreateImage(context);
     CGContextRelease(context);
     

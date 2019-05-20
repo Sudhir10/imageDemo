@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
 
+//scale tool view
 @interface NklScaleToolView : UIView
 
 @end
-
-NS_ASSUME_NONNULL_END

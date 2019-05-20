@@ -9,7 +9,9 @@
 import UIKit
 import GPUImage
 
+// filter type
 @objc public  enum NklFilterType: Int {
+    // list of supported filter types
     case Default = 0
     case Hue
     case Gamma
@@ -22,6 +24,7 @@ import GPUImage
     case Luminance
     case Haze
     
+    //convert self to string representation
     func toString() -> String {
         switch self {
         case .Default:
@@ -48,6 +51,8 @@ import GPUImage
             return "MonoChrome"
         }
     }
+    
+    // convert string to filter type
     static func toFilterType(fromString : String) throws -> NklFilterType  {
         if NklFilterType.Default.toString() == fromString {
             return .Default
@@ -86,19 +91,25 @@ import GPUImage
     }
 }
 
+// filter
 @objc public class NklFilter : NSObject {
     
+    // convert string to filter if convertible else return default
     @objc public class func getFilterType(fromString : String) -> NklFilterType {
         do {
             return try NklFilterType.toFilterType(fromString: fromString)
         }
         catch {}
+        // return default when given string is not converted
         return .Default
     }
 
+    // return supported filter count
     @objc public class func getFilterCount() -> Int {
         return NklFilter.getFilterNames().count
     }
+    
+    // get supported filters name
     @objc public class func getFilterNames() -> NSArray {
         return [NklFilterType.Default.toString(),
                 NklFilterType.Hue.toString(),
@@ -112,15 +123,15 @@ import GPUImage
                 NklFilterType.Haze.toString(),
                 NklFilterType.MonoChrome.toString()]
     }
-
     
-    
+    //get image after chaining brightness
     @objc public class func adjustBrightness(ofImage : UIImage , withValue : Float) -> UIImage {
         let brightnessfilter = BrightnessAdjustment()
         brightnessfilter.brightness = withValue
         return ofImage.filterWithOperation(brightnessfilter)
     }
     
+    //apply filter type on given image
     @objc public class func filterImage(onImage : UIImage , byType : NklFilterType) -> UIImage {
         switch byType {
         case .Default:
@@ -151,12 +162,13 @@ import GPUImage
 
 //MARK: private
 extension NklFilter {
-    
+    // hue filter
     class func applyHueFilter(onImage : UIImage) -> UIImage{
         let brightnessfilter = HueAdjustment()
         return onImage.filterWithOperation(brightnessfilter)
     }
-    
+
+    // 
     class func applyGammaFilter(onImage : UIImage) -> UIImage{
         let brightnessfilter = GammaAdjustment()
         return onImage.filterWithOperation(brightnessfilter)

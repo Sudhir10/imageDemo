@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "NklResizeToolViewListener.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
+// resize tool view
 @interface NklResizeToolView : UIView {
+    
     __weak IBOutlet UIButton *originalButton;
     __weak IBOutlet UIButton *seventyfiveButton;
     __weak IBOutlet UIButton *fiftyButton;
@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
     CGFloat selectedSize;
 }
 
+//UI
 @property (weak, nonatomic) id<NklResizeToolViewListener> listener;
-@end
 
-NS_ASSUME_NONNULL_END
+@end

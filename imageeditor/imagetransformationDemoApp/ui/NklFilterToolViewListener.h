@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <imagetransformation/imagetransformation-Swift.h>
 
+// filter tool view listener
 @protocol NklFilterToolViewListener <NSObject>
+
+@required
 - (void)onFilterSelected:(NklFilterType)filterType;
+
 @end

@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
+// filter cell
 @interface NklFilterCell : UICollectionViewCell
+
+//UI
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *filterPreviewImageView;
 @end
-
-NS_ASSUME_NONNULL_END
