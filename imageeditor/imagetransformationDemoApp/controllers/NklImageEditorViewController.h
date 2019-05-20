@@ -12,10 +12,12 @@
 #import "NklFilterToolViewListener.h"
 #import "NklResizeToolViewListener.h"
 
+// image editor view controller
 @interface NklImageEditorViewController : UIViewController <
     NklBrightnessToolViewListener,
     NklFilterToolViewListener,
     NklResizeToolViewListener> {
+        
     CGFloat preferedBottomViewOffset;
     CGSize preferedBottomViewSize;
 }

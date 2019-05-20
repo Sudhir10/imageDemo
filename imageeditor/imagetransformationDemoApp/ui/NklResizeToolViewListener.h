@@ -10,6 +10,7 @@
 
 @class NklResizeToolView;
 
+//resize tool view listener
 @protocol NklResizeToolViewListener
 
 @required

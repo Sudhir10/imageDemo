@@ -9,11 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "NklBrightnessToolViewListener.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
-
+//brightness tool view
 @interface NklBrightnessToolView : UIView
-@property (weak, nonatomic) id<NklBrightnessToolViewListener> listener;
-@end
 
-NS_ASSUME_NONNULL_END
+//UI
+@property (weak, nonatomic) id<NklBrightnessToolViewListener> listener;
+
+@end

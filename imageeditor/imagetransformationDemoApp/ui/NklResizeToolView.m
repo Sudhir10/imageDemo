@@ -8,49 +8,60 @@
 
 #import "NklResizeToolView.h"
 
+// resize tool view
 @implementation NklResizeToolView
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    // set default size
     selectedSize = 1.0;
     [self selectButton:originalButton];
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+//====================
+//event
+//====================
+// called when original button clicked
 - (IBAction)originalClick:(id)sender {
     [self selectButton:sender];
     selectedSize = 1.0;
 }
+
+// called when 75 % button clicked
 - (IBAction)seventyfiveClick:(id)sender {
     [self selectButton:sender];
     selectedSize = 0.75;
 }
+
+// called when 50 % button clicked
 - (IBAction)fiftyClick:(id)sender {
     [self selectButton:sender];
     selectedSize = 0.5;
 }
+
+// called when 25 % button clicked
 - (IBAction)twentyFiveClick:(id)sender {
     [self selectButton:sender];
     selectedSize = 0.25;
 }
+
+// called when 10 % button clicked
 - (IBAction)tenClick:(id)sender {
     [self selectButton:sender];
     selectedSize = 0.10;
 }
 
-
+// called when cancel button clicked
 - (IBAction)cancelClick:(id)sender {
     [self.listener nklResizeToolViewCancelClick:self];
 }
+
+// called when done button clicked
 - (IBAction)doneClick:(id)sender {
     [self.listener nklResizeToolView:self valueChange:selectedSize];
 }
 
+// select given button and clear all selection
 - (void) selectButton:(UIButton*)button {
     // un select all button
     [self changeSelectionOfButton:originalButton withSelectedState:NO];
@@ -63,6 +74,8 @@
     [self changeSelectionOfButton:button withSelectedState:YES];
     
 }
+
+// change image of radio based on selected value
 - (void) changeSelectionOfButton:(UIButton*)button
               withSelectedState : (BOOL)selected {
     [button setImage:selected ? [UIImage imageNamed:@"radio-selected"] : [UIImage imageNamed:@"radio-unselected"]  forState:UIControlStateNormal];

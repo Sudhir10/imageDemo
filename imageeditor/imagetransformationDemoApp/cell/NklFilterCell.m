@@ -8,11 +8,7 @@
 
 #import "NklFilterCell.h"
 
+// filter cell
 @implementation NklFilterCell
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
 
 @end

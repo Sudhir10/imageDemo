@@ -7,17 +7,23 @@
 //
 
 #import "NklImageEditorViewController.h"
-#import "U.h"
 
-#import "NlkUtility.h"
-#import "NklBrightnessToolView.h"
-#import "NklFilterToolView.h"
-#import "NklResizeToolView.h"
-
-#import "NklResize.h"
 
 #import <imagetransformation/imagetransformation-Swift.h>
 
+#import "U.h"
+#import "NlkUtility.h"
+
+#import "NklBrightnessToolView.h"
+#import "NklFilterToolView.h"
+#import "NklResizeToolView.h"
+#import "NklPhotoCropAndStraightenView.h"
+
+#import "NklResize.h"
+#import "NklCrop.h"
+
+
+// image editor view controller
 @implementation NklImageEditorViewController
 
 - (void)viewDidLoad {
@@ -40,12 +46,17 @@
     [super viewDidLayoutSubviews];
 }
 
+//====================
+//event
+//====================
+//Called when scale button click
 - (IBAction)scaleButtonClick:(UIButton*)sender {
     UIView* v = [U loadView:@"NklBottomMenuView"];
     v.frame = CGRectMake(0, SCREEN.height - 44, self.view.frame.size.width, 44);
     [self.view addSubview:v];
 }
 
+//Called when brightness button click
 - (IBAction)onBrightnessClick:(id)sender {
     self.vBottomMenu.hidden = FALSE;
     self.attachedView = (NklBrightnessToolView*)[U loadView:@"NklBrightnessToolView"];
@@ -56,9 +67,22 @@
     self.attachedView.frame = CGRectMake(0, SCREEN.height - preferedBottomViewOffset, self.view.frame.size.width, preferedBottomViewSize.height);
     [self.view addSubview:self.attachedView];
 }
+
+//Called when crop button click
 - (IBAction)cropClick:(id)sender {
+    self.vBottomMenu.hidden = FALSE;
+    self.attachedView = [[NklPhotoCropAndStraightenView alloc] initWithFrame:self.view.bounds image:self.originalImage maxRotationAngle:0.5];
+    preferedBottomViewSize.height = SCREEN.height - 88;
+    preferedBottomViewSize.width = 0;
+    preferedBottomViewOffset = SCREEN.height - 44;
+    self.attachedView.frame = CGRectMake(0, SCREEN.height - preferedBottomViewOffset, self.view.frame.size.width, preferedBottomViewSize.height);
+    self.attachedView.backgroundColor = UIColor.whiteColor;
+    self.attachedView.clipsToBounds = YES;
+    [self.view addSubview:self.attachedView];
+    
 }
 
+//Called when filter button click
 - (IBAction)filterClick:(id)sender {
     self.vBottomMenu.hidden = FALSE;
     self.attachedView = [U loadView:@"NklFilterToolView"];
@@ -71,12 +95,15 @@
     [self.view addSubview:self.attachedView];
 }
 
+//Called when incline button click
 - (IBAction)inclineClick:(id)sender {
 }
 
+//Called when rotate button click
 - (IBAction)rotateClick:(id)sender {
 }
 
+//Called when resize button click
 - (IBAction)resizeClick:(id)sender {
     self.attachedView = [U loadView:@"NklResizeToolView"];
     ((NklResizeToolView*)self.attachedView ).listener = self;
@@ -89,6 +116,7 @@
 
 }
 
+//Called when cancel button click
 - (IBAction)onCancelClick:(id)sender {
     
 //    [U showConfirmDialog:@"Title"
@@ -114,10 +142,22 @@
 
 }
 
+//Called when save button click
 - (IBAction)onSaveClick:(id)sender {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Save: Do you want to save the changes you made. Photo will appear in phone gallery?" preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if ([self.attachedView isKindOfClass:[NklPhotoCropAndStraightenView class]]) {
+            NklPhotoCropAndStraightenView *cropView = (NklPhotoCropAndStraightenView*)self.attachedView;
+            UIImage *cropedImage = [NklCrop cropImage:self.originalImage
+                   translation:[cropView photoTranslation]
+                     transform:cropView.photoContentView.transform
+                         angle:cropView.angle
+                      cropSize:cropView.cropView.frame.size
+                 imageViewSize:cropView.photoContentView.bounds.size];
+            self.imageView.image = cropedImage;            
+        }
+
         [self removeAttachedView];
         self.vBottomMenu.hidden = TRUE;
         //save image
@@ -129,30 +169,33 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+// remove attached view
 - (void)removeAttachedView {
     [self.attachedView removeFromSuperview];
     self.attachedView = nil;
 }
 
+
 #pragma mark - NklBrightnessToolViewDelegate
 
+//Called when brightness value change
 - (void)nklBrightnessToolView:(NklBrightnessToolView *)nklBrightnessToolView valueChange:(CGFloat)newValue {
     self.imageView.image = [NklFilter adjustBrightnessOfImage:self.originalImage withValue:newValue];
-//    [NklBrightnessFilter adjustBrightnessOfImage:self.originalImage withValue:newValue];
 }
 
+//Called when filter selected
 - (void)onFilterSelected:(NklFilterType)filterType {
     self.imageView.image = [NklFilter filterImageOnImage:self.originalImage byType:filterType];
 }
 
+//Called when resize value change
 - (void)nklResizeToolView:(NklResizeToolView *)nklresizeToolView valueChange:(CGFloat)newValue {
-    NSLog(@"change value == %f",newValue);
-    
     [self removeAttachedView];
     self.vBottomMenu.hidden = TRUE;
-    self.imageView.image = [NklResize resizeImage:self.imageView.image byPercentage:newValue];
+    self.imageView.image = [NklResize resizeImage:self.originalImage byPercentage:newValue];
 }
 
+//Called when cancel clicked on resize view
 - (void)nklResizeToolViewCancelClick:(NklResizeToolView *)nklresizeToolView {
     [self removeAttachedView];
     self.vBottomMenu.hidden = TRUE;
