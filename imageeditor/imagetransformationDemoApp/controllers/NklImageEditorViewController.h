@@ -30,6 +30,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageViewBottomConstraint;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) UIView *attachedView;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 //背景
 @property (weak, nonatomic) IBOutlet UIView *vBarBg;

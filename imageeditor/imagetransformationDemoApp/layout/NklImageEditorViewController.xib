@@ -12,8 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NklImageEditorViewController">
             <connections>
+                <outlet property="cancelButton" destination="f7w-e4-jsT" id="gcF-O0-n3C"/>
                 <outlet property="imageView" destination="IO4-WC-dyB" id="6Xf-41-och"/>
                 <outlet property="imageViewBottomConstraint" destination="VF4-ZW-bah" id="gRJ-mX-peI"/>
+                <outlet property="saveButton" destination="QWl-51-h9I" id="OU9-Ya-Rym"/>
                 <outlet property="vBar" destination="RZj-Zp-lHT" id="aBc-nL-e3k"/>
                 <outlet property="vBarBg" destination="PEP-rc-mna" id="nty-Mm-N9H"/>
                 <outlet property="vBottomMenu" destination="Zur-4f-Jvf" id="DiP-05-F18"/>
@@ -27,7 +29,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XD9-Cq-x8P">
-                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <rect key="frame" x="0.0" y="579" width="375" height="44"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Vv7-D7-M3f">
                             <rect key="frame" x="5" y="0.0" width="370" height="44"/>
@@ -171,7 +173,7 @@
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IO4-WC-dyB">
-                    <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                    <rect key="frame" x="0.0" y="64" width="375" height="511"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -184,8 +186,8 @@
                 <constraint firstItem="PEP-rc-mna" firstAttribute="bottom" secondItem="RZj-Zp-lHT" secondAttribute="bottom" id="Hhi-V3-ylp"/>
                 <constraint firstItem="RZj-Zp-lHT" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="LhP-cL-dYt"/>
                 <constraint firstItem="XD9-Cq-x8P" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Nl1-vE-bmJ"/>
-                <constraint firstItem="XD9-Cq-x8P" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="O4m-4K-5hi"/>
-                <constraint firstItem="XD9-Cq-x8P" firstAttribute="top" secondItem="IO4-WC-dyB" secondAttribute="bottom" id="VF4-ZW-bah"/>
+                <constraint firstItem="XD9-Cq-x8P" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" constant="-44" id="O4m-4K-5hi"/>
+                <constraint firstItem="XD9-Cq-x8P" firstAttribute="top" secondItem="IO4-WC-dyB" secondAttribute="bottom" constant="4" id="VF4-ZW-bah"/>
                 <constraint firstItem="IO4-WC-dyB" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="VNT-cF-fHt"/>
                 <constraint firstItem="PEP-rc-mna" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ju5-XE-CZa"/>
                 <constraint firstItem="Zur-4f-Jvf" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="pGM-C5-yEg"/>

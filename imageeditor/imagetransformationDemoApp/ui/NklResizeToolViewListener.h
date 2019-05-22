@@ -15,5 +15,6 @@
 
 @required
 - (void) nklResizeToolView:(NklResizeToolView*) nklresizeToolView valueChange:(CGFloat)newValue;
+- (void) nklResizeToolView:(NklResizeToolView*) nklresizeToolView doneClickWithValueChange:(CGFloat)newValue;
 - (void) nklResizeToolViewCancelClick:(NklResizeToolView*) nklresizeToolView;
 @end
