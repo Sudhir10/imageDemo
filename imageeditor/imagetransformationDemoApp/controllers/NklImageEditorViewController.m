@@ -30,7 +30,6 @@
     [super viewDidLoad];
     self.originalImage = [UIImage imageNamed:@"sample"];
     self.imageView.image = self.originalImage;
-    self.vBottomMenu.hidden = TRUE;
 }
 
 - (void)viewDidLayoutSubviews {
@@ -58,7 +57,7 @@
 
 //Called when brightness button click
 - (IBAction)onBrightnessClick:(id)sender {
-    self.vBottomMenu.hidden = FALSE;
+    [self changeBottomViewToIcon:YES];
     self.attachedView = (NklBrightnessToolView*)[U loadView:@"NklBrightnessToolView"];
     ((NklBrightnessToolView*)self.attachedView ).listener = self;
     preferedBottomViewOffset = 88;
@@ -72,14 +71,14 @@
 - (IBAction)cropClick:(id)sender {
     self.vBottomMenu.hidden = FALSE;
     self.attachedView = [[NklPhotoCropAndStraightenView alloc] initWithFrame:self.view.bounds image:self.originalImage maxRotationAngle:0.5];
-    preferedBottomViewSize.height = SCREEN.height - 88;
+    preferedBottomViewSize.height = SCREEN.height - 165;
     preferedBottomViewSize.width = 0;
-    preferedBottomViewOffset = SCREEN.height - 44;
+    preferedBottomViewOffset = SCREEN.height - 120;
     self.attachedView.frame = CGRectMake(0, SCREEN.height - preferedBottomViewOffset, self.view.frame.size.width, preferedBottomViewSize.height);
     self.attachedView.backgroundColor = UIColor.whiteColor;
     self.attachedView.clipsToBounds = YES;
     [self.view addSubview:self.attachedView];
-    
+    [self changeBottomViewToIcon:YES];
 }
 
 //Called when filter button click
@@ -93,6 +92,7 @@
     preferedBottomViewSize.width = 0;
     self.attachedView.frame = CGRectMake(0, SCREEN.height - preferedBottomViewOffset, self.view.frame.size.width, preferedBottomViewSize.height);
     [self.view addSubview:self.attachedView];
+    [self changeBottomViewToIcon:YES];
 }
 
 //Called when incline button click
@@ -118,21 +118,10 @@
 
 //Called when cancel button click
 - (IBAction)onCancelClick:(id)sender {
-    
-//    [U showConfirmDialog:@"Title"
-//                    text:nil
-//                  noText:[U res2str:@"MID_COMMON_OK"]
-//                 yesText:[U res2str:@"MID_COMMON_HELP"]
-//              completion:^(int result) {
-//                  if (result == DIALOG_YES) {
-//                  }
-//              }];
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Are you sure you want to discard the changes in the selected files?" preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self removeAttachedView];
-        self.vBottomMenu.hidden = TRUE;
-
         self.imageView.image = self.originalImage;
     }];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
@@ -159,7 +148,6 @@
         }
 
         [self removeAttachedView];
-        self.vBottomMenu.hidden = TRUE;
         //save image
         UIImageWriteToSavedPhotosAlbum(self.imageView.image, nil, nil, nil);
     }];
@@ -169,12 +157,52 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+- (IBAction)onDiscardClick:(id)sender {
+    [self changeBottomViewToIcon:NO];
+    [self removeAttachedView];
+    self.imageView.image = self.originalImage;
+}
+
+- (IBAction)onAcceptClick:(id)sender {
+    
+    if ([self.attachedView isKindOfClass:[NklPhotoCropAndStraightenView class]]) {
+        NklPhotoCropAndStraightenView *cropView = (NklPhotoCropAndStraightenView*)self.attachedView;
+        UIImage *cropedImage = [NklCrop cropImage:self.originalImage
+                                      translation:[cropView photoTranslation]
+                                        transform:cropView.photoContentView.transform
+                                            angle:cropView.angle
+                                         cropSize:cropView.cropView.frame.size
+                                    imageViewSize:cropView.photoContentView.bounds.size];
+        self.imageView.image = cropedImage;
+    }
+    self.originalImage = self.imageView.image;
+    
+    [self changeBottomViewToIcon:NO];
+    [self removeAttachedView];    
+}
+
 // remove attached view
 - (void)removeAttachedView {
     [self.attachedView removeFromSuperview];
     self.attachedView = nil;
 }
 
+// change bottom view appearance
+- (void) changeBottomViewToIcon:(BOOL)icon {
+    // change text
+    [self.cancelButton setTitle:icon ? @"✕" : @"Cancel" forState:UIControlStateNormal];
+    [self.saveButton setTitle:icon ? @"✓" : @"Save" forState:UIControlStateNormal];
+    
+    // remove previous selector
+    [self.saveButton removeTarget:self action:@selector(onCancelClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.cancelButton removeTarget:self action:@selector(onSaveClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.saveButton removeTarget:self action:@selector(onDiscardClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.cancelButton removeTarget:self action:@selector(onAcceptClick:) forControlEvents:UIControlEventTouchUpInside];
+
+    // add target
+    [self.saveButton addTarget:self action: icon ? @selector(onAcceptClick:) : @selector(onSaveClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.cancelButton addTarget:self action: icon ? @selector(onDiscardClick:) : @selector(onCancelClick:) forControlEvents:UIControlEventTouchUpInside];
+}
 
 #pragma mark - NklBrightnessToolViewDelegate
 
@@ -190,14 +218,18 @@
 
 //Called when resize value change
 - (void)nklResizeToolView:(NklResizeToolView *)nklresizeToolView valueChange:(CGFloat)newValue {
-    [self removeAttachedView];
-    self.vBottomMenu.hidden = TRUE;
     self.imageView.image = [NklResize resizeImage:self.originalImage byPercentage:newValue];
 }
 
+- (void)nklResizeToolView:(NklResizeToolView *)nklresizeToolView doneClickWithValueChange:(CGFloat)newValue {
+    [self removeAttachedView];
+    self.imageView.image = [NklResize resizeImage:self.originalImage byPercentage:newValue];
+    self.originalImage = self.imageView.image;
+}
 //Called when cancel clicked on resize view
 - (void)nklResizeToolViewCancelClick:(NklResizeToolView *)nklresizeToolView {
     [self removeAttachedView];
-    self.vBottomMenu.hidden = TRUE;
+    self.imageView.image = self.originalImage;
 }
+
 @end

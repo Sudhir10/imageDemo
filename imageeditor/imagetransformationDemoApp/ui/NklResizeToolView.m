@@ -25,30 +25,35 @@
 - (IBAction)originalClick:(id)sender {
     [self selectButton:sender];
     selectedSize = 1.0;
+    [self.listener nklResizeToolView:self valueChange:selectedSize];
 }
 
 // called when 75 % button clicked
 - (IBAction)seventyfiveClick:(id)sender {
     [self selectButton:sender];
     selectedSize = 0.75;
+    [self.listener nklResizeToolView:self valueChange:selectedSize];
 }
 
 // called when 50 % button clicked
 - (IBAction)fiftyClick:(id)sender {
     [self selectButton:sender];
     selectedSize = 0.5;
+    [self.listener nklResizeToolView:self valueChange:selectedSize];
 }
 
 // called when 25 % button clicked
 - (IBAction)twentyFiveClick:(id)sender {
     [self selectButton:sender];
     selectedSize = 0.25;
+    [self.listener nklResizeToolView:self valueChange:selectedSize];
 }
 
 // called when 10 % button clicked
 - (IBAction)tenClick:(id)sender {
     [self selectButton:sender];
     selectedSize = 0.10;
+    [self.listener nklResizeToolView:self valueChange:selectedSize];
 }
 
 // called when cancel button clicked
@@ -58,7 +63,7 @@
 
 // called when done button clicked
 - (IBAction)doneClick:(id)sender {
-    [self.listener nklResizeToolView:self valueChange:selectedSize];
+    [self.listener nklResizeToolView:self doneClickWithValueChange:selectedSize];
 }
 
 // select given button and clear all selection
